@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Groupe_pers {
+public class GroupePersonnes {
     private int no_groupe;
 
     private int compteur = 0;
     ArrayList<Personne> personnes;
 
-    Groupe_pers(int no_groupe){
+    public GroupePersonnes(int no_groupe){
         this.no_groupe = compteur++;
         this.personnes = new ArrayList<>();
     }
