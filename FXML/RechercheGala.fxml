@@ -8,14 +8,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="62.0" layoutY="69.0" prefHeight="102.0" prefWidth="408.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" text="NOM :" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" stylesheets="@style.css" text="NOM :" textFill="#121212" />
                   <TextField />
                </children>
             </HBox>
