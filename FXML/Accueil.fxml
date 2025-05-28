@@ -6,23 +6,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="207.0" layoutY="109.0" spacing="50.0">
+      <VBox alignment="CENTER" layoutX="60.0" layoutY="70.0" spacing="50.0">
          <children>
-            <Button mnemonicParsing="false" text="JOUR J" />
-            <Button mnemonicParsing="false" text="Organisation TABLE 6 pers." />
-            <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Organisation TABLE 12 pers." />
+            <Button mnemonicParsing="false" prefWidth="180.0" text="JOUR J" />
+            <Button mnemonicParsing="false" prefWidth="180.0" text="Organisation TABLE 6 pers." />
+            <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="180.0" text="Organisation TABLE 12 pers." />
          </children>
       </VBox>
-      <ButtonBar layoutX="424.0" layoutY="361.0">
+      <ButtonBar layoutX="116.0" layoutY="310.0">
          <buttons>
+            <Button mnemonicParsing="false" text="FERMER" />
             <Button mnemonicParsing="false" text="OK" />
-            <Button mnemonicParsing="false" text="Fermer" />
          </buttons>
       </ButtonBar>
    </children>
    <padding>
-      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
 </Pane>
