@@ -1,3 +1,5 @@
+package modele;
+
 public class Personne{
     private int id;
     private int compteur = 0;
