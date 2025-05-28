@@ -15,13 +15,13 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" stylesheets="@style.css" text="NOM :" textFill="#121212" />
+                  <Label fx:id="lblNom" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" stylesheets="@style.css" text="NOM :" textFill="#121212" />
                   <TextField prefHeight="26.0" prefWidth="170.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" text="PRENOM :" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="lblPrenom" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" text="PRENOM :" HBox.hgrow="ALWAYS" />
                   <TextField prefHeight="26.0" prefWidth="170.0" />
                </children>
             </HBox>
@@ -29,8 +29,8 @@
       </VBox>
       <ButtonBar layoutX="250.0" layoutY="203.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="211.0">
         <buttons>
-          <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="ANNULER" />
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="OK" />
+          <Button fx:id="bnAnnuler" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="ANNULER" />
+            <Button fx:id="bnOK" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="OK" />
         </buttons>
       </ButtonBar>
    </children>
