@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="207.0" layoutY="109.0" spacing="50.0">
@@ -18,8 +17,8 @@
       </VBox>
       <ButtonBar layoutX="424.0" layoutY="361.0">
          <buttons>
-            <Button mnemonicParsing="false" text="Fermer" />
             <Button mnemonicParsing="false" text="OK" />
+            <Button mnemonicParsing="false" text="Fermer" />
          </buttons>
       </ButtonBar>
    </children>
