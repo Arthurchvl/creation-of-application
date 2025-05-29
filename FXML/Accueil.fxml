@@ -10,26 +10,15 @@
    <children>
       <VBox alignment="CENTER" layoutX="60.0" layoutY="70.0" spacing="30.0">
          <children>
-<<<<<<< Updated upstream
-            <Button fx:id="bn6tb" mnemonicParsing="false" prefWidth="180.0" text="Organisation TABLE 6 pers." />
-            <Button fx:id="bn12tb" mnemonicParsing="false" prefWidth="180.0" text="Organisation TABLE 12 pers." />
-            <Button fx:id="bnJ" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="180.0" text="JOUR J" />
-=======
-            <Button prefWidth="250.0" contentDisplay="CENTER" text="Organisation TABLE 6 personnes" />
-            <Button prefWidth="250.0" contentDisplay="CENTER" text="Organisation TABLE 12 personnes" />
-            <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefWidth="180.0" text="JOUR J" />
->>>>>>> Stashed changes
+            <Button fx:id="bn6tb" prefWidth="250.0" contentDisplay="CENTER" text="Organisation TABLE 6 pers." />
+            <Button fx:id="bn12tb" prefWidth="250.0" contentDisplay="CENTER" text="Organisation TABLE 12 pers." />
+            <Button fx:id="bnJ" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefWidth="180.0" text="JOUR J"  />
          </children>
       </VBox>
       <ButtonBar layoutX="116.0" layoutY="310.0">
          <buttons>
-<<<<<<< Updated upstream
             <Button fx:id="bnFERMER" mnemonicParsing="false" text="FERMER" />
             <Button fx:id="bnOK" mnemonicParsing="false" text="OK" />
-=======
-            <Button text="FERMER" />
-            <Button text="OK" />
->>>>>>> Stashed changes
          </buttons>
       </ButtonBar>
    </children>
