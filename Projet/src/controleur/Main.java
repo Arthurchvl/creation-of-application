@@ -6,9 +6,11 @@ import vue.*;
 
 public class Main extends Application{
 	static private FenAccueil fAccueil;
+	static private FenErreurRecherchePresonne fErreurRecherchePersonne;
 
 	public void start(Stage f) throws Exception{
 		fAccueil = new FenAccueil();
+		fErreurRecherchePersonne = new FenErreurRecherchePresonne();
 		fAccueil.show();
 	}
 	
@@ -16,7 +18,23 @@ public class Main extends Application{
 		Application.launch(args);
 	}
 	
-	public void fermerFenetre() {
+	static public void fermerFenetre() {
 		System.exit(0);
+	}
+	
+	static public void ouvrirDetailPersonne(String nom, String prenom) {
+		System.out.println("Ouverture du détail de " + nom + prenom);
+	}
+	
+	static public void ouvrirDetailTable(Integer no_table) {
+		System.out.println("Détail table "  + no_table + " ouverte");
+	}
+	
+	static public void ouvrirErreurRecherchePersonne(String nom, String prenom) {
+		fErreurRecherchePersonne.show();
+	}
+	
+	static public void retourAccueil() {
+		fErreurRecherchePersonne.close();
 	}
 }

@@ -2,11 +2,11 @@ package modele;
 
 public class Personne{
     private int id;
-    private int compteur = 0;
+    private static int compteur = 0;
     private String nom;
     private String prenom;
 
-    public Personne(int id, String nom, String prenom){
+    public Personne(String nom, String prenom){
         this.id = compteur++;
         this.nom = nom;
         this.prenom = prenom;
