@@ -5,48 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="150.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="102.0" prefWidth="408.0" spacing="20.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
-               <children>
-                  <Label fx:id="lblNom" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="80.0" stylesheets="@style.css" text="NOM :" textFill="#121212" />
-                  <TextField prefHeight="30.0" prefWidth="170.0" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
-               <children>
-                  <Label fx:id="lblPrenom" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="80.0" text="PRENOM :" HBox.hgrow="ALWAYS" />
-                  <TextField prefHeight="30.0" prefWidth="170.0" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
-               <children>
-                  <Label fx:id="lblPrenom1" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="80.0" text="TOTAL :" HBox.hgrow="ALWAYS" />
-                  <SplitMenuButton alignment="CENTER" mnemonicParsing="false" prefWidth="170.0" text="SplitMenuButton">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
-                  </SplitMenuButton>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-               <children>
-                <Button fx:id="bnAnnuler" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="ANNULER" />
-                  <Button fx:id="bnOK" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="OK" />
-               </children>
-            </HBox>
+            <Label text="NOM" />
+            <Label fx:id="lblPrenom" prefHeight="20.0" text="PRENOM" HBox.hgrow="ALWAYS" />
          </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <Label fx:id="lblPrenom1" alignment="CENTER_RIGHT" prefHeight="20.0" text="TABLE :" HBox.hgrow="ALWAYS" />
+            <SplitMenuButton alignment="CENTER" mnemonicParsing="false" prefWidth="170.0" text="SplitMenuButton">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 2" />
+               </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" spacing="20.0">
+         <children>
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="ANNULER" />
+            <Button fx:id="bnOK" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="OK" />
+         </children>
+      </HBox>
    </children>
-</Pane>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
