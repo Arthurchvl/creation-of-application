@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -49,7 +48,7 @@
             <Button mnemonicParsing="false" prefWidth="100.0" text="ENLEVER" />
          </children>
       </HBox>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar>
         <buttons>
           <Button mnemonicParsing="false" prefWidth="100.0" text="RETOUR" />
         </buttons>
