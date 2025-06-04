@@ -40,9 +40,9 @@
             </Label>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" prefWidth="150.0" text="CHANGER TABLE" />
-      <Button mnemonicParsing="false" prefWidth="150.0" text="SUPPRIMER TABLE" />
-      <Button mnemonicParsing="false" prefWidth="150.0" text="SUPPRIMER TABLE" />
+      <Button mnemonicParsing="false" prefWidth="200.0" text="CHANGER TABLE" />
+      <Button mnemonicParsing="false" prefWidth="200.0" text="SUPPRIMER TABLE" />
+      <Button mnemonicParsing="false" prefWidth="200.0" text="SUPPRIMER PERSONNE" />
       <HBox alignment="CENTER_RIGHT">
          <children>
             <Button mnemonicParsing="false" prefWidth="100.0" text="RETOUR" />
