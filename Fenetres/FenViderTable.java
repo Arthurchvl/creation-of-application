@@ -8,10 +8,10 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class FenSupprimerTable extends Stage{
+public class FenViderTable extends Stage{
 	
 	public FenErreurRecherchePresonne() throws IOException{
-		this.setTitle("SUPPRIMER LA TABLE");
+		this.setTitle("VIDER LA TABLE");
 		this.setResizable(false);
 		
 		Scene laScene = new Scene(creerSceneGraph());
@@ -19,7 +19,7 @@ public class FenSupprimerTable extends Stage{
 	}
 
 	private Pane creerSceneGraph() throws IOException {
-		File fichier = new File("/home/etuinfo/archauvel/Documents/SAES/SAE201/FXML/SupprimerTable.fxml");
+		File fichier = new File("/home/etuinfo/archauvel/Documents/SAES/SAE201/FXML/ViderTable.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(fichier.toURI().toURL());
         Pane root = new Pane();
