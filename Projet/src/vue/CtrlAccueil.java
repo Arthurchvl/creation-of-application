@@ -1,5 +1,7 @@
 package vue;
 
+import controleur.*;
+import modele.*;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,15 +20,22 @@ public class CtrlAccueil {
     @FXML
     void ouvrirFenetre(ActionEvent event) {
     	if (txtNom.getText().isEmpty() && txtPrenom.getText().isEmpty()) {
-    		controleur.Main.ouvrirDetailTable(Integer.parseInt(listeTable.getValue()));
+    		Main.ouvrirDetailTable(Integer.parseInt(listeTable.getValue()));
     	} else {
-    		controleur.Main.ouvrirDetailPersonne(txtNom.getText(), txtPrenom.getText());
+    		Personne personneATrouver = new Personne(txtNom.getText(), txtPrenom.getText()) ;
+    		if (Donnees.contient(personneATrouver)) {
+        		Main.ouvrirDetailPersonne(personneATrouver.getNom(), personneATrouver.getPrenom());
+    		}
+    		else {
+    			personneATrouver.afficher();
+    			Main.ouvrirErreurRecherchePersonne(personneATrouver.getNom(), personneATrouver.getPrenom());
+    		}
     	}
     }
 
     @FXML
     void fermerProgramme(ActionEvent event) {
-    	controleur.Main.fermerFenetre();
+    	Main.fermerFenetre();
     }
     
     public void initialize() {
