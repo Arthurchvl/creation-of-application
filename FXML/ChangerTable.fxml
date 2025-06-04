@@ -38,8 +38,8 @@
       </HBox>
       <HBox spacing="20.0">
          <children>
-            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#retourInfoPersonne" prefWidth="100.0" text="ANNULER" />
-            <Button fx:id="bnValider" mnemonicParsing="false" onAction="#retourEnregistrerInfoPersonne" prefWidth="100.0" text="VALIDER" />
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#retourFenInfoPersonne" prefWidth="100.0" text="ANNULER" />
+            <Button fx:id="bnValider" mnemonicParsing="false" onAction="#retourEnregistrerFenInfoPersonne" prefWidth="100.0" text="VALIDER" />
          </children>
       </HBox>
    </children>
