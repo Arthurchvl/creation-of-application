@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.CtrlSupprimerPersonne">
    <children>
       <Label text="Voulez-vous supprimer : " />
       <HBox alignment="TOP_CENTER" spacing="20.0">
@@ -27,8 +26,8 @@
       </HBox>
       <HBox spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" prefWidth="100.0" text="ANNULER" />
-            <Button mnemonicParsing="false" prefWidth="100.0" text="VALIDER" />
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#retourFenInfoPersonne" prefWidth="100.0" text="ANNULER" />
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#retourFenAccueil" prefWidth="100.0" text="VALIDER" />
          </children>
       </HBox>
    </children>
