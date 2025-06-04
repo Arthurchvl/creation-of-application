@@ -1,3 +1,4 @@
 .label {
-    color: blue;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
 }
