@@ -34,4 +34,16 @@ public class Personne{
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+    
+    public boolean egal(Personne p) {
+    	return this == p;
+    }
+    
+    public String toString() {
+    	return this.nom + " " + this.prenom;
+    }
+    
+    public void afficher() {
+    	System.out.println(this.toString());
+    }
 }
