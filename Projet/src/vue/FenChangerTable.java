@@ -9,11 +9,12 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import modele.Personne;
 
-public class FenErreurRecherchePresonne extends Stage{
-	private CtrlErreurRecherchePersonne ctrl;
+public class FenChangerTable extends Stage {
 	
-	public FenErreurRecherchePresonne() throws IOException{
-		this.setTitle("ERREUR");
+	private CtrlChangerTable ctrl;
+	
+	public FenChangerTable() throws IOException{
+		this.setTitle("CHANGER LA TABLE");
 		this.setResizable(false);
 		
 		Scene laScene = new Scene(creerSceneGraph());
@@ -21,7 +22,7 @@ public class FenErreurRecherchePresonne extends Stage{
 	}
 
 	private Pane creerSceneGraph() throws IOException {
-		File fichier = new File("/Users/arthurchauvel/Desktop/cours/SAES/S201/Code/FXML/ErreurRecherche.fxml");
+		File fichier = new File("/Users/arthurchauvel/Desktop/cours/SAES/S201/Code/FXML/ChangerTable.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(fichier.toURI().toURL());
         Pane root = new Pane();

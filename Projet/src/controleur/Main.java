@@ -9,8 +9,8 @@ public class Main extends Application{
 	static private FenAccueil fAccueil;
 	static private FenErreurRecherchePresonne fErreurRecherchePersonne;
 	static private FenInfoPersonne fInfoPersonne;
-	/*static private FenAjouterPersonne fAjouterPersonne;
 	static private FenChangerTable fChangerTable;
+	/*static private FenAjouterPersonne fAjouterPersonne;
 	static private FenInfoTable fInfoTable;
 	static private FenSupprimerPersonne fSupprimerPersonne ;
 	static private FenSupprimerTable fSupprimerTable ;*/
@@ -21,9 +21,9 @@ public class Main extends Application{
 		fAccueil = new FenAccueil();
 		fErreurRecherchePersonne = new FenErreurRecherchePresonne();
 		fInfoPersonne = new FenInfoPersonne();
-
-		/*fAjouterPersonne = new FenAjouterPersonne();
 		fChangerTable = new FenChangerTable();
+		
+		/*fAjouterPersonne = new FenAjouterPersonne();
 		fInfoTable = new FenInfoTable();
 		fSupprimerPersonne = new FenSupprimerPersonne();
 		fSupprimerTable = new FenSupprimerTable();*/
@@ -61,7 +61,19 @@ public class Main extends Application{
 		fInfoPersonne.close();
 	}
 	
-	static public void ouvrirChangerTablePersonne() {
-		System.out.println("Ouverture de la page de changement de table.");
+	static public void ouvrirChangerTablePersonne(String nom, String prenom) {
+		fChangerTable.chargerDonnees(nom, prenom);
+		fChangerTable.show();
+	}
+	
+	static public void fermerFenetreChangerTable() {
+		fChangerTable.close();
+	}
+	
+	static public void EnregistrerFenetreChangerTable(String nom, String prenom) {
+		fChangerTable.close();
+		fInfoPersonne.close();
+		fInfoPersonne.chargerDonnees(nom, prenom);
+		fInfoPersonne.show();
 	}
 }

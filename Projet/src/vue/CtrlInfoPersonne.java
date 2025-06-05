@@ -44,7 +44,12 @@ public class CtrlInfoPersonne {
     	lblNom.setText(txt);
     }
     
-    @FXML
+    public void setLblTable(String txt) {
+    	lblTable.setText(txt);
+    }
+    
+    @SuppressWarnings("unlikely-arg-type")
+	@FXML
     void enleverTablePersonne(ActionEvent event) {
     	Personne personneAenlever = new Personne(lblNom.getText(), lblPrenom.getText());
     	Alert confirmationEnleverTable = new Alert(
@@ -57,12 +62,13 @@ public class CtrlInfoPersonne {
     	Optional<ButtonType> res = confirmationEnleverTable.showAndWait();
     	if (res.equals(ButtonType.YES)) {
     		Donnees.enleverTablePersonne(personneAenlever);
+    		lblTable.setText("X");
     	}
     }
     
     @FXML
     void changerTablePersonne(ActionEvent event) {
-    	Main.ouvrirChangerTablePersonne();
+    	Main.ouvrirChangerTablePersonne(lblNom.getText(), lblPrenom.getText());
     }
     
     @FXML

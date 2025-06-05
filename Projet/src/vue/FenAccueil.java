@@ -19,7 +19,7 @@ public class FenAccueil extends Stage {
 	}
 
 	private Pane creerSceneGraph() throws IOException {
-		File fichier = new File("/home/etuinfo/archauvel/Documents/SAES/SAE201/FXML/Accueil.fxml");
+		File fichier = new File("/Users/arthurchauvel/Desktop/cours/SAES/S201/Code/FXML/Accueil.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(fichier.toURI().toURL());
         Pane root = new Pane();

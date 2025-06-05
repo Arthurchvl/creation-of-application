@@ -1,5 +1,8 @@
 package modele;
 
+import java.util.Map;
+import java.util.Map.Entry;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
@@ -8,13 +11,13 @@ import javafx.collections.ObservableMap;
 public class Donnees {
     private static ObservableList<Personne> listePersonnes = FXCollections.observableArrayList();
     private static ObservableList<Personne> listePersonnesSansTable = FXCollections.observableArrayList();
-    private static ObservableMap<Integer, GroupePersonnes> listeTables = FXCollections.observableHashMap();
+    private static ObservableMap<Personne, Integer> listeTables = FXCollections.observableHashMap();
 	
     public static void chargementDonnees() {
     	
 		Personne jeanPierre = new Personne("Chauvel", "Jean");
 		Personne jeanPierre2 = new Personne("Jean-pierre", "Pernault1");
-		Personne jeanPierre1 = new Personne("Jean-pierre", "Pernault12");
+		Personne jeanPierre1 = new Personne("chauvel", "arthur");
 		
 		listePersonnes.add(jeanPierre);
 		listePersonnes.add(jeanPierre2);
@@ -22,7 +25,7 @@ public class Donnees {
 		
 		listePersonnesSansTable.add(jeanPierre);
 		listePersonnesSansTable.add(jeanPierre2);
-		listePersonnesSansTable.add(jeanPierre1);
+		listeTables.put(jeanPierre1,12);
 	}
 	
 	static public ObservableList<Personne> getListePersonnes() {
@@ -43,6 +46,16 @@ public class Donnees {
 		}
 	}
 	
+	static public Integer getTable(Personne p) {
+		Integer noTable = 0;
+		for (Entry<Personne, Integer> entry : listeTables.entrySet()) {
+			if (entry.getKey() != null) {
+				noTable = entry.getValue();
+			}
+		}
+		return noTable;
+	}
+	
 	static public boolean contient(Personne p) {
 		boolean estPresent = false;
 		for (Personne pT : listePersonnes) {
@@ -57,5 +70,14 @@ public class Donnees {
 	
 	static public void enleverTablePersonne(Personne p) {
 		listePersonnesSansTable.add(p);
+		if (listeTables.containsKey(p)) {
+			listeTables.remove(p);
+		}
+		listePersonnesSansTable.add(p);
+	}
+	
+	static public void changerTable(Personne p, Integer noTable) {
+		listeTables.remove(p);
+		listeTables.put(p, noTable);
 	}
 }

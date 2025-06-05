@@ -23,7 +23,7 @@ public class FenInfoPersonne extends Stage{
 	}
 
 	private Pane creerSceneGraph() throws IOException {
-		File fichier = new File("/home/etuinfo/archauvel/Documents/SAES/SAE201/FXML/InfoPersonne.fxml");
+		File fichier = new File("/Users/arthurchauvel/Desktop/cours/SAES/S201/Code/FXML/InfoPersonne.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(fichier.toURI().toURL());
         Pane root = new Pane();
@@ -36,5 +36,9 @@ public class FenInfoPersonne extends Stage{
 		Personne personneACharger = new Personne(nom, prenom);
 		ctrl.setLblNom(personneACharger.getNom());
 		ctrl.setLblPrenom(personneACharger.getPrenom());
+		
+    	Integer noTablePersonne = Donnees.getTable(personneACharger);
+    	String strnoTablePrsonne = noTablePersonne.toString();
+		ctrl.setLblTable(strnoTablePrsonne);
 	}
 }
