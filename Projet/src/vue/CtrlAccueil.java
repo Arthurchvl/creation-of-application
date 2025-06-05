@@ -11,10 +11,10 @@ import javafx.scene.control.TextField;
 
 public class CtrlAccueil {
 
-    @FXML private TextField txtPrenom;
+    @FXML public TextField txtPrenom;
     @FXML private Button bnValider;
     @FXML private Button bnAnnuler;
-    @FXML private TextField txtNom;
+    @FXML public TextField txtNom;
     @FXML private ComboBox<String> listeTable;
 
     @FXML
@@ -27,7 +27,6 @@ public class CtrlAccueil {
         		Main.ouvrirDetailPersonne(personneATrouver.getNom(), personneATrouver.getPrenom());
     		}
     		else {
-    			personneATrouver.afficher();
     			Main.ouvrirErreurRecherchePersonne(personneATrouver.getNom(), personneATrouver.getPrenom());
     		}
     	}
@@ -45,5 +44,12 @@ public class CtrlAccueil {
     			"21", "22", "23", "24", "25",  "26", "27", "28", "29", "30"
     	));
     	listeTable.setValue("Numéro de table");
+    	
+    	bnValider.disableProperty().bind(
+    			txtNom.textProperty().isEmpty()
+    	);
+    	bnValider.disableProperty().bind(
+    			txtPrenom.textProperty().isEmpty()
+    	);
     }
 }

@@ -8,12 +8,26 @@ import modele.*;
 public class Main extends Application{
 	static private FenAccueil fAccueil;
 	static private FenErreurRecherchePresonne fErreurRecherchePersonne;
+	static private FenInfoPersonne fInfoPersonne;
+	/*static private FenAjouterPersonne fAjouterPersonne;
+	static private FenChangerTable fChangerTable;
+	static private FenInfoTable fInfoTable;
+	static private FenSupprimerPersonne fSupprimerPersonne ;
+	static private FenSupprimerTable fSupprimerTable ;*/
 
 	public void start(Stage f) throws Exception{
 		Donnees.chargementDonnees();
 		
 		fAccueil = new FenAccueil();
 		fErreurRecherchePersonne = new FenErreurRecherchePresonne();
+		fInfoPersonne = new FenInfoPersonne();
+
+		/*fAjouterPersonne = new FenAjouterPersonne();
+		fChangerTable = new FenChangerTable();
+		fInfoTable = new FenInfoTable();
+		fSupprimerPersonne = new FenSupprimerPersonne();
+		fSupprimerTable = new FenSupprimerTable();*/
+		
 		fAccueil.show();
 	}
 	
@@ -25,21 +39,29 @@ public class Main extends Application{
 		System.exit(0);
 	}
 	
-	static public void ouvrirDetailPersonne(String nom, String prenom) {
-		System.out.println("Ouverture du détail de " + nom + " " + prenom);
-	}
-	
 	static public void ouvrirDetailTable(Integer no_table) {
 		System.out.println("Détail table "  + no_table + " ouverte");
 	}
 	
 	static public void ouvrirErreurRecherchePersonne(String nom, String prenom) {
-		CtrlErreurRecherchePersonne.chargerNom(nom);
-		CtrlErreurRecherchePersonne.chargerPrenom(prenom);
+		fErreurRecherchePersonne.chargerDonnees(nom, prenom);
 		fErreurRecherchePersonne.show();
 	}
 	
 	static public void retourAccueil() {
 		fErreurRecherchePersonne.close();
+	}
+	
+	static public void ouvrirDetailPersonne(String nom, String prenom) {
+		fInfoPersonne.chargerDonnees(nom, prenom);
+		fInfoPersonne.show();
+	}
+	
+	static public void fermerInfoPersonne() {
+		fInfoPersonne.close();
+	}
+	
+	static public void ouvrirChangerTablePersonne() {
+		System.out.println("Ouverture de la page de changement de table.");
 	}
 }

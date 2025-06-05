@@ -49,8 +49,8 @@
       </VBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
          <children>
-            <Button fx:id="bnValider" mnemonicParsing="false" onAction="#ouvrirFenetre" prefWidth="100.0" text="VALIDER" />
             <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#fermerProgramme" prefWidth="100.0" text="ANNULER" />
+            <Button fx:id="bnValider" mnemonicParsing="false" onAction="#ouvrirFenetre" prefWidth="100.0" text="VALIDER" />
          </children>
       </HBox>
    </children>

@@ -2,11 +2,16 @@ package modele;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 
+@SuppressWarnings("unused")
 public class Donnees {
     private static ObservableList<Personne> listePersonnes = FXCollections.observableArrayList();
-
-	public static void chargementDonnees() {
+    private static ObservableList<Personne> listePersonnesSansTable = FXCollections.observableArrayList();
+    private static ObservableMap<Integer, GroupePersonnes> listeTables = FXCollections.observableHashMap();
+	
+    public static void chargementDonnees() {
+    	
 		Personne jeanPierre = new Personne("Chauvel", "Jean");
 		Personne jeanPierre2 = new Personne("Jean-pierre", "Pernault1");
 		Personne jeanPierre1 = new Personne("Jean-pierre", "Pernault12");
@@ -15,11 +20,18 @@ public class Donnees {
 		listePersonnes.add(jeanPierre2);
 		listePersonnes.add(jeanPierre1);
 		
+		listePersonnesSansTable.add(jeanPierre);
+		listePersonnesSansTable.add(jeanPierre2);
+		listePersonnesSansTable.add(jeanPierre1);
 	}
 	
-	static public ObservableList<Personne> getListePersonnes() { return listePersonnes; }
+	static public ObservableList<Personne> getListePersonnes() {
+		return listePersonnes;
+	}
 	
-	static public void ajouterPersonne(Personne p) { listePersonnes.add(p); }
+	static public void ajouterPersonne(Personne p) { 
+		listePersonnes.add(p); 
+	}
 	
 	static public void supprimerPersonne(Personne p) {
 		if (p != null) {
@@ -41,5 +53,9 @@ public class Donnees {
 			}
 		}
 		return estPresent;
+	}
+	
+	static public void enleverTablePersonne(Personne p) {
+		listePersonnesSansTable.add(p);
 	}
 }

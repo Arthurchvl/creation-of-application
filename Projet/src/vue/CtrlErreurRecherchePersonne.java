@@ -8,20 +8,26 @@ import modele.*;
 import controleur.*;
 
 public class CtrlErreurRecherchePersonne {
-	static private String Nom;
-	static private String Prenom;
 
     @FXML
     private Label lblPrenom;
 
     @FXML
-    private static Label lblNom;
+    private Label lblNom;
 
     @FXML
     private Button bnRetour;
 
     @FXML
     private Button BnAjouter;
+    
+    public void setLblPrenom(String txt) {
+    	lblPrenom.setText(txt);
+    }
+    
+    public void setLblNom(String txt) {
+    	lblNom.setText(txt);
+    }
 
     @FXML
     void fermerPageErreurrecherchePersonne(ActionEvent event) {
@@ -32,22 +38,7 @@ public class CtrlErreurRecherchePersonne {
     void ajouterNouvellePersonne(ActionEvent event) {
     	Personne personneEntree = new Personne(lblNom.getText(), lblPrenom.getText());
     	Donnees.ajouterPersonne(personneEntree);
-    	for (Personne pT : Donnees.getListePersonnes()) { pT.afficher();}
     	Main.retourAccueil();
     }
-
-	public static void chargerNom(String nom) {
-		Nom = nom;
-	}
-	public static void chargerPrenom(String prenom) {
-		Prenom = prenom;
-	}
 	
-	public void initialize() {
-		
-		Personne personneACharger = new Personne(Nom, Prenom);
-		System.out.println("Personne à charger : ");
-		personneACharger.afficher();
-	}
-
 }

@@ -7,13 +7,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import modele.Personne;
+import modele.*;
 
-public class FenErreurRecherchePresonne extends Stage{
-	private CtrlErreurRecherchePersonne ctrl;
+
+public class FenInfoPersonne extends Stage{
 	
-	public FenErreurRecherchePresonne() throws IOException{
-		this.setTitle("ERREUR");
+	private CtrlInfoPersonne ctrl;
+	
+	public FenInfoPersonne() throws IOException{
+		this.setTitle("INFORMATION DE LA PERSONNE");
 		this.setResizable(false);
 		
 		Scene laScene = new Scene(creerSceneGraph());
@@ -21,7 +23,7 @@ public class FenErreurRecherchePresonne extends Stage{
 	}
 
 	private Pane creerSceneGraph() throws IOException {
-		File fichier = new File("/home/etuinfo/archauvel/Documents/SAES/SAE201/FXML/ErreurRecherche.fxml");
+		File fichier = new File("/home/etuinfo/archauvel/Documents/SAES/SAE201/FXML/InfoPersonne.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(fichier.toURI().toURL());
         Pane root = new Pane();
