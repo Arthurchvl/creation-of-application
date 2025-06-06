@@ -46,7 +46,7 @@ public class FenInfoTable extends Stage{
     	ctrl.listePersonnes.setItems(items);
     	for (Personne p : personnesDeLaTable) {
     		items.add(p.toString());
-    		System.out.println("Personnes dans la liste : " + p.toString());
     	}
+    	ctrl.items = items;
 	}
 }
