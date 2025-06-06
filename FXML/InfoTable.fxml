@@ -25,8 +25,9 @@
       </HBox>
       <HBox alignment="CENTER_RIGHT" spacing="20.0">
          <children>
-            <Button fx:id="bnRetour" mnemonicParsing="false" onAction="#retourFenAcceuil" prefWidth="100.0" text="RETOUR" />
-            <Button fx:id="bnVider" mnemonicParsing="false" onAction="#ouvrirFenViderTable" prefWidth="100.0" text="VIDER" />
+            <Button fx:id="bnRetour" mnemonicParsing="false" onAction="#retourAcceuil" prefWidth="100.0" text="RETOUR" />
+            <Button fx:id="bnDeplacer" mnemonicParsing="false" onAction="#deplacerTable" prefWidth="100.0" text="DEPLACER" />
+            <Button fx:id="bnVider" mnemonicParsing="false" onAction="#viderTable" prefWidth="100.0" text="VIDER" />
          </children>
       </HBox>
    </children>

@@ -53,7 +53,7 @@ public class CtrlInfoPersonne {
     	Personne personneAenlever = new Personne(lblNom.getText(), lblPrenom.getText());
     	Alert confirmationEnleverTable = new Alert(
     			AlertType.CONFIRMATION,
-    			"Confirmez la suppression de la tabe pour cette personne.",
+    			"Confirmez la suppression de la table pour cette personne.",
     			ButtonType.YES,
     			ButtonType.NO
     	);
@@ -78,8 +78,20 @@ public class CtrlInfoPersonne {
     
     @FXML
     void supprimerPersonne(ActionEvent event) {
-    	Personne personneAsupprimer = new Personne(lblNom.getText(), lblPrenom.getText());
-    	Donnees.supprimerPersonneGala(personneAsupprimer);
+    	Alert confirmationSupprimerPersonne = new Alert(
+    			AlertType.CONFIRMATION,
+    			"Confirmez la suppression de cette personne.",
+    			ButtonType.YES,
+    			ButtonType.NO
+    	);
+    	
+    	confirmationSupprimerPersonne.setTitle("Confirmation de suppression d'une personne");
+    	Optional<ButtonType> res = confirmationSupprimerPersonne.showAndWait();
+    	if (res.get() == ButtonType.YES) {
+    		Personne personneAsupprimer = new Personne(lblNom.getText(), lblPrenom.getText());
+        	Donnees.supprimerPersonneGala(personneAsupprimer);
+        	Main.fermerInfoPersonne();
+    	}
     }
     
     public void initialize() {

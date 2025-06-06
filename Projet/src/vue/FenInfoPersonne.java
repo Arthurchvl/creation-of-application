@@ -46,7 +46,6 @@ public class FenInfoPersonne extends Stage{
 		Personne personneACharger = new Personne(nom, prenom);
 		
 		Integer noTablePersonne = Donnees.getTable(personneACharger);
-		System.out.println(noTablePersonne);
 		String strnoTablePrsonne = noTablePersonne.toString();
 		if (noTablePersonne.equals(0)) {
    			ctrl.setLblTable("X");

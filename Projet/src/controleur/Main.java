@@ -10,10 +10,8 @@ public class Main extends Application{
 	static private FenErreurRecherchePresonne fErreurRecherchePersonne;
 	static private FenInfoPersonne fInfoPersonne;
 	static private FenChangerTable fChangerTable;
-	/*static private FenAjouterPersonne fAjouterPersonne;
 	static private FenInfoTable fInfoTable;
-	static private FenSupprimerPersonne fSupprimerPersonne ;
-	static private FenSupprimerTable fSupprimerTable ;*/
+	// static private FenSupprimerTable fSupprimerTable ;
 
 	public void start(Stage f) throws Exception{
 		Donnees.chargementDonnees();
@@ -22,11 +20,8 @@ public class Main extends Application{
 		fErreurRecherchePersonne = new FenErreurRecherchePresonne();
 		fInfoPersonne = new FenInfoPersonne();
 		fChangerTable = new FenChangerTable();
-		
-		/*fAjouterPersonne = new FenAjouterPersonne();
 		fInfoTable = new FenInfoTable();
-		fSupprimerPersonne = new FenSupprimerPersonne();
-		fSupprimerTable = new FenSupprimerTable();*/
+		// fSupprimerTable = new FenSupprimerTable();
 		
 		fAccueil.show();
 	}
@@ -37,10 +32,6 @@ public class Main extends Application{
 	
 	static public void fermerFenetre() {
 		System.exit(0);
-	}
-	
-	static public void ouvrirDetailTable(Integer no_table) {
-		System.out.println("Détail table "  + no_table + " ouverte");
 	}
 	
 	static public void ouvrirErreurRecherchePersonne(String nom, String prenom) {
@@ -74,5 +65,15 @@ public class Main extends Application{
 	static public void EnregistrerFenetreChangerTable(String nom, String prenom) {
 		fChangerTable.close();
 		fInfoPersonne.rechargerTable(nom, prenom);
+	}
+	
+	static public void ouvrirDetailTable(Integer noTable) {
+		fInfoTable.chargerListePersonnes(noTable);
+		fInfoTable.chargerDonnees(noTable);
+		fInfoTable.show();
+	}
+	
+	static public void fermerInfoTable() {
+		fInfoTable.close();
 	}
 }
