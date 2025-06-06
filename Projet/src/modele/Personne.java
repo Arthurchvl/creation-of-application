@@ -36,7 +36,7 @@ public class Personne{
     }
     
     public boolean egal(Personne p) {
-    	return this == p;
+    	return ((this.getNom() == p.getNom()) && (this.getPrenom() == p.getPrenom()) );
     }
     
     public String toString() {

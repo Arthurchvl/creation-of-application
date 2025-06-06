@@ -7,7 +7,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 
-@SuppressWarnings("unused")
 public class Donnees {
     private static ObservableList<Personne> listePersonnes = FXCollections.observableArrayList();
     private static ObservableList<Personne> listePersonnesSansTable = FXCollections.observableArrayList();
@@ -26,6 +25,11 @@ public class Donnees {
 		listePersonnesSansTable.add(jeanPierre);
 		listePersonnesSansTable.add(jeanPierre2);
 		listeTables.put(jeanPierre1,12);
+		
+		System.out.println("Personnes ayant une table : ");
+		for (Map.Entry<Personne, Integer> entry : listeTables.entrySet()) {
+            System.out.println("clé: " + entry.getKey() + " | valeur: " + entry.getValue());
+        }
 	}
 	
 	static public ObservableList<Personne> getListePersonnes() {
@@ -49,10 +53,11 @@ public class Donnees {
 	static public Integer getTable(Personne p) {
 		Integer noTable = 0;
 		for (Entry<Personne, Integer> entry : listeTables.entrySet()) {
-			if (entry.getKey() != null) {
+			if (entry.getKey().toString().equals(p.toString())) {
 				noTable = entry.getValue();
 			}
 		}
+		System.out.println(noTable);
 		return noTable;
 	}
 	

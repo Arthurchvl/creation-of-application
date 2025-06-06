@@ -48,7 +48,6 @@ public class CtrlInfoPersonne {
     	lblTable.setText(txt);
     }
     
-    @SuppressWarnings("unlikely-arg-type")
 	@FXML
     void enleverTablePersonne(ActionEvent event) {
     	Personne personneAenlever = new Personne(lblNom.getText(), lblPrenom.getText());
@@ -60,7 +59,7 @@ public class CtrlInfoPersonne {
     	);
     	confirmationEnleverTable.setTitle("Confirmation de suppression de table");
     	Optional<ButtonType> res = confirmationEnleverTable.showAndWait();
-    	if (res.equals(ButtonType.YES)) {
+    	if (res.get() == ButtonType.YES) {
     		Donnees.enleverTablePersonne(personneAenlever);
     		lblTable.setText("X");
     	}

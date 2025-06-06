@@ -38,6 +38,7 @@ public class CtrlChangerTable {
     void validerChangementTable(ActionEvent event) {
     	Personne PersonneAChanger = new Personne(lblNom.getText(), lblPrenom.getText());
     	Integer nouvelleTable = Integer.parseInt(listeTable.getValue());
+    	
     	Donnees.changerTable(PersonneAChanger, nouvelleTable);
     	Main.EnregistrerFenetreChangerTable(PersonneAChanger.getNom(), PersonneAChanger.getPrenom());
     }

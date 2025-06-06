@@ -53,6 +53,7 @@ public class Main extends Application{
 	}
 	
 	static public void ouvrirDetailPersonne(String nom, String prenom) {
+		fInfoPersonne.chargerTable(nom, prenom);
 		fInfoPersonne.chargerDonnees(nom, prenom);
 		fInfoPersonne.show();
 	}
@@ -72,8 +73,6 @@ public class Main extends Application{
 	
 	static public void EnregistrerFenetreChangerTable(String nom, String prenom) {
 		fChangerTable.close();
-		fInfoPersonne.close();
-		fInfoPersonne.chargerDonnees(nom, prenom);
-		fInfoPersonne.show();
+		fInfoPersonne.rechargerTable(nom, prenom);
 	}
 }
