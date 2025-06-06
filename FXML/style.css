@@ -109,3 +109,37 @@
 #bnAnnuler:pressed {
     -fx-background-color: #8c2a26;
 }
+
+
+#BnAjouter {
+    -fx-background-color: #4CAF50;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+}
+
+#BnAjouter:hover {
+    -fx-background-color: #388E3C;
+}
+
+#BnAjouter:pressed {
+    -fx-background-color: #388E3C;
+}
+
+/* Bouton ANNULER (rouge) */
+#bnRetour {
+    -fx-background-color: #d64541;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+}
+
+#bnRetour:hover {
+    -fx-background-color: #b03430;
+}
+
+#bnRetour:pressed {
+    -fx-background-color: #8c2a26;
+}
+
+
