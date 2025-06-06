@@ -2,7 +2,6 @@ package modele;
 
 import java.util.Map;
 import java.util.Map.Entry;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
@@ -25,11 +24,6 @@ public class Donnees {
 		listePersonnesSansTable.add(jeanPierre);
 		listePersonnesSansTable.add(jeanPierre2);
 		listeTables.put(jeanPierre1,12);
-		
-		System.out.println("Personnes ayant une table : ");
-		for (Map.Entry<Personne, Integer> entry : listeTables.entrySet()) {
-            System.out.println("clé: " + entry.getKey() + " | valeur: " + entry.getValue());
-        }
 	}
 	
 	static public ObservableList<Personne> getListePersonnes() {
@@ -42,10 +36,8 @@ public class Donnees {
 	
 	static public void supprimerPersonne(Personne p) {
 		if (p != null) {
-			for (Personne pTemp : listePersonnes) {
-				if (pTemp.equals(p)) {
-					listePersonnes.remove(p);
-				}
+			if (listePersonnes.contains(p)) {
+				listePersonnes.remove(p);
 			}
 		}
 	}
@@ -57,7 +49,6 @@ public class Donnees {
 				noTable = entry.getValue();
 			}
 		}
-		System.out.println(noTable);
 		return noTable;
 	}
 	
@@ -84,5 +75,17 @@ public class Donnees {
 	static public void changerTable(Personne p, Integer noTable) {
 		listeTables.remove(p);
 		listeTables.put(p, noTable);
+	}
+	
+	static public void supprimerPersonneGala(Personne p) {
+		listeTables.remove(p);
+		supprimerPersonne(p);
+		p.setNom(null);
+		p.setPrenom(null);
+		
+		System.out.println("Liste des personnes après suppression : ");
+	    for (Map.Entry<Personne, Integer> entry : listeTables.entrySet()) {
+	        System.out.println(entry.getKey() + " = " + entry.getValue());
+	    }
 	}
 }

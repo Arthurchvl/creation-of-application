@@ -57,6 +57,7 @@ public class CtrlInfoPersonne {
     			ButtonType.YES,
     			ButtonType.NO
     	);
+    	
     	confirmationEnleverTable.setTitle("Confirmation de suppression de table");
     	Optional<ButtonType> res = confirmationEnleverTable.showAndWait();
     	if (res.get() == ButtonType.YES) {
@@ -73,6 +74,19 @@ public class CtrlInfoPersonne {
     @FXML
     void retourAccueil(ActionEvent event) {
     	Main.fermerInfoPersonne();
+    }
+    
+    @FXML
+    void supprimerPersonne(ActionEvent event) {
+    	Personne personneAsupprimer = new Personne(lblNom.getText(), lblPrenom.getText());
+    	Donnees.supprimerPersonneGala(personneAsupprimer);
+    }
+    
+    public void initialize() {
+    	Personne personneInfo = new Personne(lblNom.getText(), lblPrenom.getText());
+    	if (Donnees.getTable(personneInfo).equals(0)) {
+    		bnEnleverTable.setDisable(true);
+    	}
     }
 
 }

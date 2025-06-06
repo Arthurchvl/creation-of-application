@@ -1,5 +1,7 @@
 package modele;
 
+import java.util.Objects;
+
 public class Personne{
     private int id;
     private static int compteur = 0;
@@ -35,11 +37,29 @@ public class Personne{
         this.prenom = prenom;
     }
     
-    public boolean egal(Personne p) {
+    /*public boolean equals(Personne p) {
     	return ((this.getNom() == p.getNom()) && (this.getPrenom() == p.getPrenom()) );
-    }
+    }*/
     
-    public String toString() {
+    
+    @Override
+	public int hashCode() {
+		return Objects.hash(nom, prenom);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Personne other = (Personne) obj;
+		return Objects.equals(nom, other.nom) && Objects.equals(prenom, other.prenom);
+	}
+
+	public String toString() {
     	return this.nom + " " + this.prenom;
     }
     

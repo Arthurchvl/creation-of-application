@@ -45,11 +45,11 @@ public class CtrlAccueil {
     	));
     	listeTable.setValue("Numéro de table");
     	
-    	bnValider.disableProperty().bind(
+    	/*bnValider.disableProperty().bind(
     			txtNom.textProperty().isEmpty()
     	);
     	bnValider.disableProperty().bind(
     			txtPrenom.textProperty().isEmpty()
-    	);
+    	);*/
     }
 }

@@ -45,7 +45,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ComboBox fx:id="listeTable" maxHeight="32.0" minHeight="32.0" prefHeight="32.0" prefWidth="150.0" styleClass="combo-box" stylesheets="@style.css" />
+            <ComboBox fx:id="listeTable" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="150.0" styleClass="combo-box" stylesheets="@style.css" />
          </children>
       </VBox>
       <HBox alignment="CENTER_RIGHT" spacing="20.0">

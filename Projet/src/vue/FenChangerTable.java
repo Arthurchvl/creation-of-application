@@ -36,4 +36,5 @@ public class FenChangerTable extends Stage {
 		ctrl.setLblNom(personneACharger.getNom());
 		ctrl.setLblPrenom(personneACharger.getPrenom());
 	}
+	
 }

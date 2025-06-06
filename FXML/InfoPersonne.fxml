@@ -49,7 +49,7 @@
       </HBox>
       <Button fx:id="bnChangerTable" mnemonicParsing="false" onAction="#changerTablePersonne" prefWidth="200.0" text="CHANGER TABLE" />
       <Button fx:id="bnEnleverTable" mnemonicParsing="false" onAction="#enleverTablePersonne" prefWidth="200.0" text="ENLEVER TABLE" />
-      <Button fx:id="bnSupprimerPersonne" mnemonicParsing="false" prefWidth="200.0" text="SUPPRIMER PERSONNE" />
+      <Button fx:id="bnSupprimerPersonne" mnemonicParsing="false" onAction="#supprimerPersonne" prefWidth="200.0" text="SUPPRIMER PERSONNE" />
       <HBox alignment="CENTER_RIGHT">
          <children>
             <Button fx:id="bnRetour" mnemonicParsing="false" onAction="#retourAccueil" prefWidth="100.0" text="RETOUR" />
