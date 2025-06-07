@@ -2,6 +2,8 @@ package vue;
 
 import controleur.*;
 import modele.*;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,24 +27,14 @@ public class CtrlAccueil {
     	if ( (listeTable.getValue().equals("0") == false) && (txtNom.getText().isEmpty() && txtPrenom.getText().isEmpty()) == false ) {
     		Alert multipleFaconsRecherchesSelectionnees = new Alert(
 	    			AlertType.ERROR,
-	    			"Veuillez ne rentrer que la personne et mettre la recherche de table sur 0 où vider les champs nom et prenom.",
+	    			"Veuillez ne rentrer qu'une personne OU une seule table.",
 	    			ButtonType.OK
 	    	);
 	    	
     		multipleFaconsRecherchesSelectionnees.setTitle("Erreur dans la recherche");
     		multipleFaconsRecherchesSelectionnees.showAndWait();
     	}
-    	else if ((listeTable.getValue().equals("0")) && (txtNom.getText().isEmpty() && txtPrenom.getText().isEmpty())) {
-    		Alert zeroFaconsRechercheSelectionnees = new Alert(
-	    			AlertType.ERROR,
-	    			"Veuillez ne rentrer que la personne et mettre la recherche de table sur 0 où vider les champs nom et prenom.",
-	    			ButtonType.OK
-	    	);
-	    	
-    		zeroFaconsRechercheSelectionnees.setTitle("Erreur dans la recherche");
-    		zeroFaconsRechercheSelectionnees.showAndWait();
-    	}
-    	else if (txtNom.getText().isEmpty() || txtPrenom.getText().isEmpty()) {
+    	else if ( (txtNom.getText().isEmpty() || txtPrenom.getText().isEmpty()) && (listeTable.getValue().equals("0")) ) {
     		Alert personneIncomplete = new Alert(
 	    			AlertType.ERROR,
 	    			"Veuillez rentrer le nom ET le prenom de la personne.",
@@ -79,11 +71,13 @@ public class CtrlAccueil {
     	));
     	listeTable.setValue("0");
     	
-    	/*bnValider.disableProperty().bind(
-    			txtNom.textProperty().isEmpty()
-    	);
-    	bnValider.disableProperty().bind(
-    			txtPrenom.textProperty().isEmpty()
-    	);*/
+    	BooleanBinding bnValiderDisableCondition = Bindings.createBooleanBinding(() ->
+	        (txtNom.getText().isEmpty() || txtPrenom.getText().isEmpty()) &&
+	        (listeTable.getValue().equals("0")),
+	        txtNom.textProperty(),
+	        txtPrenom.textProperty(),
+	        listeTable.valueProperty()
+		);
+		bnValider.disableProperty().bind(bnValiderDisableCondition);
     }
 }

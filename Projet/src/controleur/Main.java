@@ -76,4 +76,8 @@ public class Main extends Application{
 	static public void fermerInfoTable() {
 		fInfoTable.close();
 	}
+	
+	static public void rechargerInfoTable(Integer noTable) {
+		fInfoTable.chargerListePersonnes(noTable);
+	}
 }
