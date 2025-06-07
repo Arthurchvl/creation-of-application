@@ -11,7 +11,7 @@ public class Main extends Application{
 	static private FenInfoPersonne fInfoPersonne;
 	static private FenChangerTable fChangerTable;
 	static private FenInfoTable fInfoTable;
-	// static private FenSupprimerTable fSupprimerTable ;
+	static private FenDeplacerTable fDeplacerTable;
 
 	public void start(Stage f) throws Exception{
 		Donnees.chargementDonnees();
@@ -21,7 +21,7 @@ public class Main extends Application{
 		fInfoPersonne = new FenInfoPersonne();
 		fChangerTable = new FenChangerTable();
 		fInfoTable = new FenInfoTable();
-		// fSupprimerTable = new FenSupprimerTable();
+		fDeplacerTable = new FenDeplacerTable();
 		
 		fAccueil.show();
 	}
@@ -73,11 +73,25 @@ public class Main extends Application{
 		fInfoTable.show();
 	}
 	
+	static public void rechargerInfoTable(Integer noTable) {
+		fInfoTable.chargerListePersonnes(noTable);
+	}
+	
 	static public void fermerInfoTable() {
 		fInfoTable.close();
 	}
 	
-	static public void rechargerInfoTable(Integer noTable) {
+	static public void ourvirDeplacerTable(Integer noTable) {
+		fDeplacerTable.chargerDonnees(noTable);
+		fDeplacerTable.show();
+	}
+	
+	static public void fermerDeplacerTable() {
+		fDeplacerTable.close();
+	}
+	
+	static public void EnregistrerDeplacementTable(Integer noTable) {
 		fInfoTable.chargerListePersonnes(noTable);
+		fDeplacerTable.close();
 	}
 }

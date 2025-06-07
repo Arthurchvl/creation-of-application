@@ -3,15 +3,12 @@ package modele;
 import java.util.ArrayList;
 import java.util.Map.Entry;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
 
 public class Donnees {
-    private static ObservableList<Personne> listePersonnes = FXCollections.observableArrayList();
-    private static ObservableList<Personne> listePersonnesSansTable = FXCollections.observableArrayList();
     private static ObservableMap<Personne, Integer> listeTables = FXCollections.observableHashMap();
     
     private static Integer TAILLE_PETITE_TABLE = 6;
@@ -50,37 +47,6 @@ public class Donnees {
 		Personne enzo = new Personne("Aubry", "Enzo");
 		Personne manon = new Personne("Leclerc", "Manon");
 		Personne yanis = new Personne("Lopez", "Yanis");
-
-		listePersonnes.add(luc);
-		listePersonnes.add(sophie);
-		listePersonnes.add(paul);
-		listePersonnes.add(nina);
-		listePersonnes.add(hugo);
-		listePersonnes.add(emma);
-		listePersonnes.add(leo);
-		listePersonnes.add(camille);
-		listePersonnes.add(tom);
-		listePersonnes.add(chloe);
-		listePersonnes.add(noe);
-		listePersonnes.add(lina);
-		listePersonnes.add(axel);
-		listePersonnes.add(mila);
-		listePersonnes.add(nathan);
-		listePersonnes.add(alice);
-		listePersonnes.add(louis);
-		listePersonnes.add(elise);
-		listePersonnes.add(clement);
-		listePersonnes.add(ines);
-		listePersonnes.add(theo);
-		listePersonnes.add(sarah);
-		listePersonnes.add(mathis);
-		listePersonnes.add(jade);
-		listePersonnes.add(enzo);
-		listePersonnes.add(manon);
-		listePersonnes.add(yanis);
-		listePersonnes.add(jean);
-		listePersonnes.add(jeanPierre);
-		listePersonnes.add(arthur);
 		
 		listeTables.put(jean,9);
 		listeTables.put(jeanPierre,9);
@@ -115,20 +81,8 @@ public class Donnees {
 		
 	}
 	
-	static public ObservableList<Personne> getListePersonnes() {
-		return listePersonnes;
-	}
-	
 	static public void ajouterPersonne(Personne p) { 
-		listePersonnes.add(p); 
-	}
-	
-	static public void supprimerPersonne(Personne p) {
-		if (p != null) {
-			if (listePersonnes.contains(p)) {
-				listePersonnes.remove(p);
-			}
-		}
+		listeTables.put(p,0); 
 	}
 	
 	static public Integer getTable(Personne p) {
@@ -142,23 +96,14 @@ public class Donnees {
 	}
 	
 	static public boolean contient(Personne p) {
-		boolean estPresent = false;
-		for (Personne pT : listePersonnes) {
-			String nom = pT.getNom();
-			String prenom = pT.getPrenom();
-			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom())) {
-				estPresent = true;
-			}
-		}
-		return estPresent;
+		return listeTables.containsKey(p);
 	}
 	
 	static public void enleverTablePersonne(Personne p) {
-		listePersonnesSansTable.add(p);
 		if (listeTables.containsKey(p)) {
 			listeTables.remove(p);
 		}
-		listePersonnesSansTable.add(p);
+		listeTables.put(p, 0);
 	}
 	
 	static public void changerTable(Personne p, Integer noTable) {
@@ -191,7 +136,6 @@ public class Donnees {
 	
 	static public void supprimerPersonneGala(Personne p) {
 		listeTables.remove(p);
-		supprimerPersonne(p);
 		p.setNom(null);
 		p.setPrenom(null);
 	}
@@ -211,6 +155,32 @@ public class Donnees {
 		
 		for (Personne pT : personnes) {
 			enleverTablePersonne(pT);
+		}
+	}
+	
+	static public Integer getNbPlaceDisponibles(Integer noTable) {
+		Integer placesDispo = 0;
+		Integer compteur = 0;
+		for (Entry<Personne, Integer> entry : listeTables.entrySet()) {
+	    	if (entry.getValue().equals(noTable)) {
+	    		compteur++;
+	    	}
+		}
+		
+		if (noTable <= CHANGEMENT_TAILLE_TABLE) {
+			placesDispo = TAILLE_PETITE_TABLE - compteur;
+		}
+		else {
+			placesDispo = TAILLE_GRANDE_TABLE - compteur;
+		}
+		return placesDispo;
+	}
+	
+	static public void DeplacerPersonneTable(Integer noTableInitiale, Integer noNouvelleTable) {
+		ArrayList<Personne> personnes = getlistePersonnesDansUneTable(noTableInitiale);
+		
+		for (Personne pT : personnes) {
+			changerTable(pT, noNouvelleTable);
 		}
 	}
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?xml-stylesheet type="text/css" href="style.css"?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.CtrlChangerTable">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.CtrlDeplacerTable">
    <children>
       <HBox alignment="TOP_CENTER" spacing="20.0">
          <children>
@@ -18,7 +18,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="lblTable" text="X">
+            <Label fx:id="lblTable" text="0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

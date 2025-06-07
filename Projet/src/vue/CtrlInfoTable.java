@@ -29,7 +29,8 @@ public class CtrlInfoTable {
 
     @FXML
     void deplacerTable(ActionEvent event) {
-    	
+    	Integer noTable = Integer.parseInt(lblTable.getText());
+    	Main.ourvirDeplacerTable(noTable);
     }
 
     @FXML
