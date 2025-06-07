@@ -9,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class FenAccueil extends Stage {
+	private CtrlAccueil ctrl; 
 	
 	public FenAccueil() throws IOException{
 		this.setTitle("ACCUEIL");
@@ -24,6 +25,12 @@ public class FenAccueil extends Stage {
 		loader = new FXMLLoader(fichier.toURI().toURL());
         Pane root = new Pane();
 		root = loader.load();
+		ctrl = loader.getController();
      	return root;
+	}
+	
+	public void viderDonnees() {
+		ctrl.txtNom.clear();
+		ctrl.txtPrenom.clear();
 	}
 }

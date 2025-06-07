@@ -44,8 +44,4 @@ public class CtrlInfoTable {
     	Donnees.viderTable(noTable);
     	Main.rechargerInfoTable(noTable);
     }
-    
-    public void initialize() {
-    	//bnVider.disableProperty().bind(Bindings.isEmpty(items));
-    }
 }

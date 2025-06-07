@@ -47,23 +47,10 @@ public class FenInfoPersonne extends Stage{
 		
 		Integer noTablePersonne = Donnees.getTable(personneACharger);
 		String strnoTablePrsonne = noTablePersonne.toString();
-		if (noTablePersonne.equals(0)) {
-   			ctrl.setLblTable("X");
-		}
-		else {
-   			ctrl.setLblTable(strnoTablePrsonne);
-		}
-	}
-	
-	public void rechargerTable(String nom, String prenom) {
-		Personne personneACharger = new Personne(nom, prenom);
-		Integer noTablePersonne = Donnees.getTable(personneACharger);
-    	String strnoTablePrsonne = noTablePersonne.toString();
-		if (noTablePersonne == 0) {
-   			ctrl.setLblTable("X");
-		}
-		else {
-   			ctrl.setLblTable(strnoTablePrsonne);
-		}
+		ctrl.setLblTable(strnoTablePrsonne);
+    	if (noTablePersonne.equals(0)) {
+    		ctrl.bnEnleverTable.setDisable(true);
+    		ctrl.bnChangerTable.setText("AJOUTER TABLE");
+    	}
 	}
 }

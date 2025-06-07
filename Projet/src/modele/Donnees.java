@@ -54,12 +54,12 @@ public class Donnees {
 		listeTables.put(luc,9);
 		listeTables.put(sophie,9);
 		listeTables.put(paul,9);
-		listeTables.put(nina,4);
+		listeTables.put(nina,1);
 		listeTables.put(hugo,1);
-		listeTables.put(emma,4);
-		listeTables.put(leo,23);
-		listeTables.put(camille,30);
-		listeTables.put(tom,0);
+		listeTables.put(emma,1);
+		listeTables.put(leo,1);
+		listeTables.put(camille,1);
+		listeTables.put(tom,1);
 		listeTables.put(chloe,13);
 		listeTables.put(noe,13);
 		listeTables.put(lina,30);

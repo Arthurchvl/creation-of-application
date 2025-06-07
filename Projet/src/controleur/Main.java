@@ -49,12 +49,17 @@ public class Main extends Application{
 		fInfoPersonne.show();
 	}
 	
+	static public void refreshInfoPersonne(String nom, String prenom) {
+		fInfoPersonne.chargerTable(nom, prenom);
+	}
+	
 	static public void fermerInfoPersonne() {
+		fAccueil.viderDonnees();
 		fInfoPersonne.close();
 	}
 	
-	static public void ouvrirChangerTablePersonne(String nom, String prenom) {
-		fChangerTable.chargerDonnees(nom, prenom);
+	static public void ouvrirChangerTablePersonne(String nom, String prenom, Integer noTable) {
+		fChangerTable.chargerDonnees(nom, prenom, noTable);
 		fChangerTable.show();
 	}
 	
@@ -64,7 +69,7 @@ public class Main extends Application{
 	
 	static public void EnregistrerFenetreChangerTable(String nom, String prenom) {
 		fChangerTable.close();
-		fInfoPersonne.rechargerTable(nom, prenom);
+		fInfoPersonne.chargerTable(nom, prenom);
 	}
 	
 	static public void ouvrirDetailTable(Integer noTable) {

@@ -3,10 +3,13 @@ package vue;
 import java.io.File;
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import modele.Donnees;
 import modele.Personne;
 
 public class FenChangerTable extends Stage {
@@ -31,10 +34,20 @@ public class FenChangerTable extends Stage {
      	return root;
 	}
 	
-	public void chargerDonnees(String nom, String prenom) {
+	public void chargerDonnees(String nom, String prenom, Integer noTable) {
 		Personne personneACharger = new Personne(nom, prenom);
 		ctrl.setLblNom(personneACharger.getNom());
 		ctrl.setLblPrenom(personneACharger.getPrenom());
+		
+    	Integer nbPlacesAdeplacer = 1;
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for (Integer i=1 ; i <= 30 ; i++) {
+            if (Donnees.getNbPlaceDisponibles(i) >= nbPlacesAdeplacer && i != noTable) {
+            	items.add(i.toString());
+            }
+        }
+    	ctrl.listeTable.setItems(items);
+    	ctrl.listeTable.setValue("Numéro de table");
 	}
 	
 }

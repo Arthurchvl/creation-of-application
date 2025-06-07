@@ -8,9 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import modele.*;
-
 import java.util.Optional;
-
 import controleur.*;
 
 public class CtrlInfoPersonne {
@@ -19,7 +17,7 @@ public class CtrlInfoPersonne {
     private Label lblTable;
 
     @FXML
-    private Button bnChangerTable;
+    protected Button bnChangerTable;
 
     @FXML
     private Label lblPrenom;
@@ -31,7 +29,7 @@ public class CtrlInfoPersonne {
     private Button bnRetour;
 
     @FXML
-    private Button bnEnleverTable;
+    protected Button bnEnleverTable;
 
     @FXML
     private Button bnSupprimerPersonne;
@@ -62,13 +60,13 @@ public class CtrlInfoPersonne {
     	Optional<ButtonType> res = confirmationEnleverTable.showAndWait();
     	if (res.get() == ButtonType.YES) {
     		Donnees.enleverTablePersonne(personneAenlever);
-    		lblTable.setText("X");
+    		Main.refreshInfoPersonne(personneAenlever.getNom(), personneAenlever.getPrenom());
     	}
     }
     
     @FXML
     void changerTablePersonne(ActionEvent event) {
-    	Main.ouvrirChangerTablePersonne(lblNom.getText(), lblPrenom.getText());
+    	Main.ouvrirChangerTablePersonne(lblNom.getText(), lblPrenom.getText(), Integer.parseInt(lblTable.getText()));
     }
     
     @FXML
@@ -91,13 +89,6 @@ public class CtrlInfoPersonne {
     		Personne personneAsupprimer = new Personne(lblNom.getText(), lblPrenom.getText());
         	Donnees.supprimerPersonneGala(personneAsupprimer);
         	Main.fermerInfoPersonne();
-    	}
-    }
-    
-    public void initialize() {
-    	Personne personneInfo = new Personne(lblNom.getText(), lblPrenom.getText());
-    	if (Donnees.getTable(personneInfo).equals(0)) {
-    		bnEnleverTable.setDisable(true);
     	}
     }
 

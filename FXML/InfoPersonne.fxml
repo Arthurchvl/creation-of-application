@@ -40,7 +40,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblTable" text="X">
+            <Label fx:id="lblTable" text="0">
                <font>
                   <Font size="15.0" />
                </font>

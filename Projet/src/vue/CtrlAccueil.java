@@ -16,10 +16,10 @@ import javafx.scene.control.Alert.AlertType;
 
 public class CtrlAccueil {
 
-    @FXML public TextField txtPrenom;
+    @FXML protected TextField txtPrenom;
     @FXML private Button bnValider;
     @FXML private Button bnAnnuler;
-    @FXML public TextField txtNom;
+    @FXML protected TextField txtNom;
     @FXML private ComboBox<String> listeTable;
 
     @FXML
