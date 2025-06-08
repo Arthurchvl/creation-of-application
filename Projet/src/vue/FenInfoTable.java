@@ -43,6 +43,9 @@ public class FenInfoTable extends Stage{
 		ObservableList<String> items = FXCollections.observableArrayList();
 		
     	ArrayList<Personne> personnesDeLaTable = Donnees.getlistePersonnesDansUneTable(noTable);
+    	if (items.isEmpty()) {
+    		items.add("Il n'y a personne dans la table.");
+    	}
     	ctrl.listePersonnes.setItems(items);
     	for (Personne p : personnesDeLaTable) {
     		items.add(p.toString());
