@@ -18,13 +18,13 @@ public class CtrlAccueil {
 
     @FXML protected TextField txtPrenom;
     @FXML private Button bnValider;
-    @FXML private Button bnAnnuler;
+    @FXML protected Button bnAnnuler;
     @FXML protected TextField txtNom;
     @FXML private ComboBox<String> listeTable;
 
     @FXML
     void ouvrirFenetre(ActionEvent event) {
-    	if ( (listeTable.getValue().equals("0") == false) && (txtNom.getText().isEmpty() && txtPrenom.getText().isEmpty()) == false ) {
+    	if ( (listeTable.getValue().equals("Numéro de table") == false) && (txtNom.getText().isEmpty() && txtPrenom.getText().isEmpty()) == false ) {
     		Alert multipleFaconsRecherchesSelectionnees = new Alert(
 	    			AlertType.ERROR,
 	    			"Veuillez ne rentrer qu'une personne OU une seule table.",
@@ -65,19 +65,24 @@ public class CtrlAccueil {
     
     public void initialize() {
     	listeTable.setItems(FXCollections.observableArrayList(
-    			"0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+    			"Numéro de table","1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
     			"11", "12", "13", "14", "15",  "16", "17", "18", "19", "20",
     			"21", "22", "23", "24", "25",  "26", "27", "28", "29", "30"
     	));
-    	listeTable.setValue("0");
+    	listeTable.setValue("Numéro de table");
     	
     	BooleanBinding bnValiderDisableCondition = Bindings.createBooleanBinding(() ->
 	        (txtNom.getText().isEmpty() || txtPrenom.getText().isEmpty()) &&
-	        (listeTable.getValue().equals("0")),
+	        (listeTable.getValue().equals("Numéro de table")),
 	        txtNom.textProperty(),
 	        txtPrenom.textProperty(),
 	        listeTable.valueProperty()
 		);
 		bnValider.disableProperty().bind(bnValiderDisableCondition);
+		
+		txtPrenom.setPromptText("Xavier");
+		txtNom.setPromptText("Dupont de Ligonnès");
+		
+		txtPrenom.requestFocus();
     }
 }

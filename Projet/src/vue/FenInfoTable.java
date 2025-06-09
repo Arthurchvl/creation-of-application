@@ -3,6 +3,7 @@ package vue;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -43,7 +44,7 @@ public class FenInfoTable extends Stage{
 		ObservableList<String> items = FXCollections.observableArrayList();
 		
     	ArrayList<Personne> personnesDeLaTable = Donnees.getlistePersonnesDansUneTable(noTable);
-    	if (items.isEmpty()) {
+    	if (personnesDeLaTable.isEmpty()) {
     		items.add("Il n'y a personne dans la table.");
     	}
     	ctrl.listePersonnes.setItems(items);
@@ -51,5 +52,8 @@ public class FenInfoTable extends Stage{
     		items.add(p.toString());
     	}
     	ctrl.items = items;
+    	if (items.contains("Il n'y a personne dans la table.")) {
+    		ctrl.bnVider.setDisable(true);
+    	}
 	}
 }

@@ -38,7 +38,7 @@ public class CtrlErreurRecherchePersonne {
     void ajouterNouvellePersonne(ActionEvent event) {
     	Personne personneEntree = new Personne(lblNom.getText(), lblPrenom.getText());
     	Donnees.ajouterPersonne(personneEntree);
-    	Main.retourAccueil();
+    	Main.ouvrirDetailPersonne(personneEntree.getNom(), personneEntree.getPrenom());
     }
 	
 }

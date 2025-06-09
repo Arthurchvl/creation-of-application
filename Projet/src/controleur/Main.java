@@ -1,6 +1,7 @@
 package controleur;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 import vue.*;
 import modele.*;
@@ -24,6 +25,10 @@ public class Main extends Application{
 		fDeplacerTable = new FenDeplacerTable();
 		
 		fAccueil.show();
+		
+	    Platform.runLater(() -> {
+	        fAccueil.getBnAnnuler().requestFocus();
+	    });
 	}
 	
 	static public void main(String args[]) {

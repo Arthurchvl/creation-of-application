@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -32,5 +33,9 @@ public class FenAccueil extends Stage {
 	public void viderDonnees() {
 		ctrl.txtNom.clear();
 		ctrl.txtPrenom.clear();
+	}
+	
+	public Button getBnAnnuler() {
+	    return ctrl.bnAnnuler;
 	}
 }

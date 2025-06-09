@@ -91,5 +91,4 @@ public class CtrlInfoPersonne {
         	Main.fermerInfoPersonne();
     	}
     }
-
 }

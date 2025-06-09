@@ -1,6 +1,5 @@
 package vue;
 
-import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,7 +14,7 @@ public class CtrlInfoTable {
 
     @FXML private Button bnRetour;
 
-    @FXML private Button bnVider;
+    @FXML protected Button bnVider;
     
     @FXML protected Button bnDeplacer;
 
@@ -44,10 +43,5 @@ public class CtrlInfoTable {
     	Integer noTable = Integer.parseInt(lblTable.getText());
     	Donnees.viderTable(noTable);
     	Main.rechargerInfoTable(noTable);
-    }
-    
-    public void initialize() {
-    	bnVider.disableProperty().bind(Bindings.isEmpty(items));
-    	bnDeplacer.setDisable(true);
     }
 }
