@@ -51,6 +51,9 @@ public class FenInfoPersonne extends Stage{
 		} 
 		else {
 			ctrl.setLblTable(strnoTablePrsonne);
+			ctrl.bnEnleverTable.setDisable(false);
+    		ctrl.bnChangerTable.setText("CHANGER TABLE");
+
 		}
 	}
 }
