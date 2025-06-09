@@ -54,6 +54,7 @@ public class FenInfoTable extends Stage{
     	ctrl.items = items;
     	if (items.contains("Il n'y a personne dans la table.")) {
     		ctrl.bnVider.setDisable(true);
+    		ctrl.bnDeplacer.setDisable(true);
     	}
 	}
 }
