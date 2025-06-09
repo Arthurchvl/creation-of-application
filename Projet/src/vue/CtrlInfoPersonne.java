@@ -66,7 +66,14 @@ public class CtrlInfoPersonne {
     
     @FXML
     void changerTablePersonne(ActionEvent event) {
-    	Main.ouvrirChangerTablePersonne(lblNom.getText(), lblPrenom.getText(), Integer.parseInt(lblTable.getText()));
+    	Integer noTable;
+    	if (lblTable.getText().equals("X")) {
+    		noTable = 0;
+    	}
+    	else {
+    		noTable = Integer.parseInt(lblTable.getText());
+    	}
+    	Main.ouvrirChangerTablePersonne(lblNom.getText(), lblPrenom.getText(), noTable);
     }
     
     @FXML

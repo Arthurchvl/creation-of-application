@@ -44,6 +44,13 @@ public class Main extends Application{
 		fErreurRecherchePersonne.show();
 	}
 	
+	static public void ouvrirDetailNouvellePersonne(String nom, String prenom) {
+		fErreurRecherchePersonne.close();
+		fInfoPersonne.chargerTable(nom, prenom);
+		fInfoPersonne.chargerDonnees(nom, prenom);
+		fInfoPersonne.show();
+	}
+	
 	static public void retourAccueil() {
 		fErreurRecherchePersonne.close();
 	}
