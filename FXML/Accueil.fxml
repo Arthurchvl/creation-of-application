@@ -58,13 +58,22 @@
                </padding>
             </Label>
             <ComboBox fx:id="listeTable" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="175.0" styleClass="combo-box" stylesheets="@style.css" />
-            <Button fx:id="bnPlanDeTable" mnemonicParsing="false" onAction="#ouvrirPlanTable" prefWidth="175.0" text="PLAN DE TABLE" />
+            <Button fx:id="bnPlanDeTable" mnemonicParsing="false" onAction="#ouvrirPlanTable" prefWidth="175.0" styleClass="grosTitre" stylesheets="@style.css" text="PLAN DE TABLE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </VBox>
       <HBox alignment="CENTER_RIGHT" spacing="20.0">
          <children>
-            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#fermerProgramme" prefWidth="110.0" styleClass="bnAnnuler" stylesheets="@style.css" text="ANNULER" />
-            <Button fx:id="bnValider" mnemonicParsing="false" onAction="#ouvrirFenetre" prefWidth="110.0" styleClass="bnValider" stylesheets="@style.css" text="RECHERCHER" />
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#fermerProgramme" prefWidth="110.0" styleClass="bnAnnuler" stylesheets="@style.css" text="ANNULER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="bnValider" mnemonicParsing="false" onAction="#ouvrirFenetre" prefWidth="110.0" styleClass="bnValider" stylesheets="@style.css" text="RECHERCHER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </HBox>
    </children>

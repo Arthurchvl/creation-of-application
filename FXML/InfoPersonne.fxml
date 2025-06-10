@@ -45,12 +45,24 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="bnChangerTable" mnemonicParsing="false" onAction="#changerTablePersonne" prefWidth="200.0" styleClass="bnDeplacer" stylesheets="@style.css" text="CHANGER TABLE" />
-      <Button fx:id="bnEnleverTable" mnemonicParsing="false" onAction="#enleverTablePersonne" prefWidth="200.0" styleClass="bnVider" text="ENLEVER TABLE" />
-      <Button fx:id="bnSupprimerPersonne" mnemonicParsing="false" onAction="#supprimerPersonne" prefWidth="200.0" styleClass="bnAnnuler" stylesheets="@style.css" text="SUPPRIMER PERSONNE" />
+      <Button fx:id="bnChangerTable" mnemonicParsing="false" onAction="#changerTablePersonne" prefWidth="200.0" styleClass="bnDeplacer" stylesheets="@style.css" text="CHANGER TABLE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="bnEnleverTable" mnemonicParsing="false" onAction="#enleverTablePersonne" prefWidth="200.0" styleClass="bnVider" text="ENLEVER TABLE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="bnSupprimerPersonne" mnemonicParsing="false" onAction="#supprimerPersonne" prefWidth="200.0" styleClass="bnAnnuler" stylesheets="@style.css" text="SUPPRIMER PERSONNE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <HBox alignment="CENTER_RIGHT">
          <children>
-            <Button fx:id="bnRetour" mnemonicParsing="false" onAction="#retourAccueil" prefWidth="100.0" styleClass="bnRetour" stylesheets="@style.css" text="RETOUR" />
+            <Button fx:id="bnRetour" mnemonicParsing="false" onAction="#retourAccueil" prefWidth="100.0" styleClass="bnRetour" stylesheets="@style.css" text="RETOUR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </HBox>
    </children>
