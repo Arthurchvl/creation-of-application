@@ -2,7 +2,7 @@
 
 /* ------ Fond et texte généraux ------ */
 .root {
-    -fx-background-color: #FAFAFA;
+    -fx-background-color: efefef;
     -fx-font-family: "Segoe UI", sans-serif;
     -fx-font-size: 14px;
 }
@@ -27,7 +27,7 @@
 
 .text-field {
     -fx-background-color: #FFFFFF;
-    -fx-border-color: #BDBDBD;
+    -fx-border-color: linear-gradient(to right, #9C27B0, #E91E63);
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-padding: 6 10;
@@ -37,19 +37,16 @@
     -fx-transition: all 0.3s ease-in-out;
 }
 
-.text-field:hover {
-    -fx-border-color: #757575;
-}
+
 
 .text-field:focused {
-    -fx-border-color: #a42999; /* Couleur focus */
-    -fx-effect: dropshadow(gaussian, #a42999, 5, 0.2, 0, 0);
+    -fx-effect: dropshadow(gaussian, #E91E63, 5, 0.2, 0, 0);
 }
 
 /* ==== COMBOBOX ==== */
 .combo-box {
     -fx-background-color: #FFFFFF;
-    -fx-border-color: #BDBDBD;
+    -fx-border-color: linear-gradient(to right, #9C27B0, #E91E63);
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-padding: 6 10;
@@ -57,20 +54,16 @@
     -fx-text-fill: #212121;
 }
 
-.combo-box:hover {
-    -fx-border-color: #757575;
-}
 
-.combo-box:focused {
-    -fx-border-color: #a42999;
-    -fx-effect: dropshadow(gaussian, #a42999, 5, 0.2, 0, 0);
-}
+
 
 /* ==== COMBOBOX LIST === */
 .combo-box-popup .list-cell {
     -fx-background-color: white;
     -fx-text-fill: #212121;
     -fx-font-size: 14px;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
 }
 
 .combo-box-popup .list-cell:hover {
@@ -79,67 +72,87 @@
 
 
 /* Bouton VALIDER (bleu) */
-#bnValider {
+.bnValider {
     -fx-background-color: #4CAF50;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#bnValider:hover {
+.bnValider:hover {
     -fx-background-color: #388E3C;
 }
 
-#bnValider:pressed {
+.bnValider:pressed {
     -fx-background-color: #388E3C;
 }
 
 /* Bouton ANNULER (rouge) */
-#bnAnnuler {
+.bnAnnuler {
     -fx-background-color: #d64541;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#bnAnnuler:hover {
+.bnAnnuler:hover {
     -fx-background-color: #b03430;
 }
 
-#bnAnnuler:pressed {
+.bnAnnuler:pressed {
     -fx-background-color: #8c2a26;
 }
 
-
-#BnAjouter {
-    -fx-background-color: #4CAF50;
+.bnRetour {
+    -fx-background-color: #7E57C2;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#BnAjouter:hover {
-    -fx-background-color: #388E3C;
+.bnRetour:hover {
+    -fx-background-color: #6a3ab7;
 }
 
-#BnAjouter:pressed {
-    -fx-background-color: #388E3C;
+.bnRetour:pressed {
+    -fx-background-color: #6a3ab7;
 }
 
-/* Bouton ANNULER (rouge) */
-#bnRetour {
-    -fx-background-color: #d64541;
+.bnDeplacer {
+    -fx-background-color: #BA68C8;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#bnRetour:hover {
-    -fx-background-color: #b03430;
+.bnDeplacer:hover {
+    -fx-background-color: #9C27B0;
 }
 
-#bnRetour:pressed {
-    -fx-background-color: #8c2a26;
+.bnDeplacer:pressed {
+    -fx-background-color: #9C27B0;
+}
+
+.bnVider {
+    -fx-background-color: #9575CD;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+}
+
+.bnVider:hover {
+    -fx-background-color: #7e57c2;
+}
+
+.bnVider:pressed {
+    -fx-background-color: #7e57c2;
+}
+
+.grosTitre {
+    -fx-background-color: linear-gradient(to right, #9C27B0, #E91E63);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -webkit-text-fill-color: white;
 }
 
 
