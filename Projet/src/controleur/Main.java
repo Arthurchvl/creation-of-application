@@ -115,6 +115,7 @@ public class Main extends Application{
 	}
 	
 	static public void ouvrirPlanDeTable() {
+		fPlanTable.chargerDonnees();
 		fPlanTable.show(); 
 	}
 	
