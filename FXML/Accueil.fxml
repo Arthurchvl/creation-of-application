@@ -46,6 +46,7 @@
                </font>
             </Label>
             <ComboBox fx:id="listeTable" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="175.0" styleClass="combo-box" stylesheets="@style.css" />
+            <Button fx:id="bnPlanDeTable" mnemonicParsing="false" onAction="#ouvrirPlanTable" prefWidth="175.0" text="PLAN DE TABLE" />
          </children>
       </VBox>
       <HBox alignment="CENTER_RIGHT" spacing="20.0">

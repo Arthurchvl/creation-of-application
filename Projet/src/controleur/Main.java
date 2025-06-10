@@ -13,6 +13,7 @@ public class Main extends Application{
 	static private FenChangerTable fChangerTable;
 	static private FenInfoTable fInfoTable;
 	static private FenDeplacerTable fDeplacerTable;
+	static private FenPlanDeTable fPlanTable;
 
 	public void start(Stage f) throws Exception{
 		Donnees.chargementDonnees();
@@ -23,6 +24,7 @@ public class Main extends Application{
 		fChangerTable = new FenChangerTable();
 		fInfoTable = new FenInfoTable();
 		fDeplacerTable = new FenDeplacerTable();
+		fPlanTable = new FenPlanDeTable();
 		
 		fAccueil.show();
 		
@@ -110,5 +112,13 @@ public class Main extends Application{
 	static public void EnregistrerDeplacementTable(Integer noTable) {
 		fInfoTable.chargerListePersonnes(noTable);
 		fDeplacerTable.close();
+	}
+	
+	static public void ouvrirPlanDeTable() {
+		fPlanTable.show(); 
+	}
+	
+	static public void retourAccueildepuisPlanTable() {
+		fPlanTable.close();
 	}
 }

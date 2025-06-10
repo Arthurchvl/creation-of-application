@@ -79,66 +79,66 @@
 
 
 /* Bouton VALIDER (bleu) */
-#bnValider {
+.bnValider {
     -fx-background-color: #4CAF50;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#bnValider:hover {
+.bnAnnuler:hover:hover {
     -fx-background-color: #388E3C;
 }
 
-#bnValider:pressed {
+.bnValider:pressed {
     -fx-background-color: #388E3C;
 }
 
 /* Bouton ANNULER (rouge) */
-#bnAnnuler {
+.bnAnnuler {
     -fx-background-color: #d64541;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#bnAnnuler:hover {
+.bnAnnuler:hover {
     -fx-background-color: #b03430;
 }
 
-#bnAnnuler:pressed {
+.bnAnnuler:pressed {
     -fx-background-color: #8c2a26;
 }
 
 
-#BnAjouter {
+.BnAjouter {
     -fx-background-color: #4CAF50;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#BnAjouter:hover {
+.BnAjouter:hover {
     -fx-background-color: #388E3C;
 }
 
-#BnAjouter:pressed {
+.BnAjouter:pressed {
     -fx-background-color: #388E3C;
 }
 
 /* Bouton ANNULER (rouge) */
-#bnRetour {
+.bnRetour {
     -fx-background-color: #d64541;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-text-fill: white;
 }
 
-#bnRetour:hover {
+.bnRetour:hover {
     -fx-background-color: #b03430;
 }
 
-#bnRetour:pressed {
+.bnRetour:pressed {
     -fx-background-color: #8c2a26;
 }
 

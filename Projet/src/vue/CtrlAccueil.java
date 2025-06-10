@@ -21,6 +21,7 @@ public class CtrlAccueil {
     @FXML protected Button bnAnnuler;
     @FXML protected TextField txtNom;
     @FXML private ComboBox<String> listeTable;
+    @FXML private Button bnPlanDeTable;
 
     @FXML
     void ouvrirFenetre(ActionEvent event) {
@@ -61,6 +62,11 @@ public class CtrlAccueil {
     @FXML
     void fermerProgramme(ActionEvent event) {
     	Main.fermerFenetre();
+    }
+    
+    @FXML
+    void ouvrirPlanTable(ActionEvent event) {
+    	Main.ouvrirPlanDeTable();
     }
     
     public void initialize() {
