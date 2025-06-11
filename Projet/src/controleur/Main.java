@@ -17,7 +17,7 @@ public class Main extends Application{
 
 	public void start(Stage f) throws Exception{
 		Donnees.chargementDonnees();
-		
+				
 		fAccueil = new FenAccueil();
 		fErreurRecherchePersonne = new FenErreurRecherchePresonne();
 		fInfoPersonne = new FenInfoPersonne();
@@ -25,7 +25,7 @@ public class Main extends Application{
 		fInfoTable = new FenInfoTable();
 		fDeplacerTable = new FenDeplacerTable();
 		fPlanTable = new FenPlanDeTable();
-		
+
 		fAccueil.show();
 		
 	    Platform.runLater(() -> {
