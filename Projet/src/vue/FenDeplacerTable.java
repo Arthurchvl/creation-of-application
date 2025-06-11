@@ -10,14 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import modele.Donnees;
-import modele.Personne;
 
-public class FenChangerTable extends Stage {
+public class FenDeplacerTable extends Stage {
 	
-	private CtrlChangerTable ctrl;
+	private CtrlDeplacerTable ctrl;
 	
-	public FenChangerTable() throws IOException{
-		this.setTitle("CHANGER LA TABLE");
+	public FenDeplacerTable() throws IOException{
+		this.setTitle("DEPLACER PETITE TABLE");
 		this.setResizable(false);
 		
 		Scene laScene = new Scene(creerSceneGraph());
@@ -25,7 +24,7 @@ public class FenChangerTable extends Stage {
 	}
 
 	private Pane creerSceneGraph() throws IOException {
-		File fichier = new File("/Users/arthurchauvel/Desktop/cours/SAES/S201/Code/FXML/ChangerTable.fxml");
+		File fichier = new File("/Users/arthurchauvel/Desktop/cours/SAES/S201/Code/FXML/DeplacerPetiteTable.fxml");
 		FXMLLoader loader;
 		loader = new FXMLLoader(fichier.toURI().toURL());
         Pane root = new Pane();
@@ -34,20 +33,17 @@ public class FenChangerTable extends Stage {
      	return root;
 	}
 	
-	public void chargerDonnees(String nom, String prenom, Integer noTable) {
-		Personne personneACharger = new Personne(nom, prenom);
-		ctrl.setLblNom(personneACharger.getNom());
-		ctrl.setLblPrenom(personneACharger.getPrenom());
+	public void chargerDonnees(Integer noTable) {
+		ctrl.setLblTable(noTable.toString());
 		
-    	Integer nbPlacesAdeplacer = 1;
+    	Integer nbPlacesAdeplacer = Donnees.getlistePersonnesDansUneTable(noTable).size();
         ObservableList<String> items = FXCollections.observableArrayList();
         for (Integer i=1 ; i <= 30 ; i++) {
-            if (Donnees.getNbPlaceDisponibles(i) >= nbPlacesAdeplacer && i != noTable) {
+            if (Donnees.getNbPlaceDisponibles(i) >= nbPlacesAdeplacer) {
             	items.add(i.toString());
             }
         }
     	ctrl.listeTable.setItems(items);
     	ctrl.listeTable.setValue("Numéro de table");
 	}
-	
 }

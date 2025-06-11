@@ -8,9 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import modele.*;
-
 import java.util.Optional;
-
 import controleur.*;
 
 public class CtrlInfoPersonne {
@@ -19,7 +17,7 @@ public class CtrlInfoPersonne {
     private Label lblTable;
 
     @FXML
-    private Button bnChangerTable;
+    protected Button bnChangerTable;
 
     @FXML
     private Label lblPrenom;
@@ -31,7 +29,7 @@ public class CtrlInfoPersonne {
     private Button bnRetour;
 
     @FXML
-    private Button bnEnleverTable;
+    protected Button bnEnleverTable;
 
     @FXML
     private Button bnSupprimerPersonne;
@@ -48,32 +46,56 @@ public class CtrlInfoPersonne {
     	lblTable.setText(txt);
     }
     
-    @SuppressWarnings("unlikely-arg-type")
 	@FXML
     void enleverTablePersonne(ActionEvent event) {
     	Personne personneAenlever = new Personne(lblNom.getText(), lblPrenom.getText());
     	Alert confirmationEnleverTable = new Alert(
     			AlertType.CONFIRMATION,
-    			"Confirmez la suppression de la tabe pour cette personne.",
+    			"Confirmez la suppression de la table pour cette personne.",
     			ButtonType.YES,
     			ButtonType.NO
     	);
+    	
     	confirmationEnleverTable.setTitle("Confirmation de suppression de table");
     	Optional<ButtonType> res = confirmationEnleverTable.showAndWait();
-    	if (res.equals(ButtonType.YES)) {
+    	if (res.get() == ButtonType.YES) {
     		Donnees.enleverTablePersonne(personneAenlever);
-    		lblTable.setText("X");
+    		Main.refreshInfoPersonne(personneAenlever.getNom(), personneAenlever.getPrenom());
     	}
     }
     
     @FXML
     void changerTablePersonne(ActionEvent event) {
-    	Main.ouvrirChangerTablePersonne(lblNom.getText(), lblPrenom.getText());
+    	Integer noTable;
+    	if (lblTable.getText().equals("X")) {
+    		noTable = 0;
+    	}
+    	else {
+    		noTable = Integer.parseInt(lblTable.getText());
+    	}
+    	Main.ouvrirChangerTablePersonne(lblNom.getText(), lblPrenom.getText(), noTable);
     }
     
     @FXML
     void retourAccueil(ActionEvent event) {
     	Main.fermerInfoPersonne();
     }
-
+    
+    @FXML
+    void supprimerPersonne(ActionEvent event) {
+    	Alert confirmationSupprimerPersonne = new Alert(
+    			AlertType.CONFIRMATION,
+    			"Confirmez la suppression de cette personne.",
+    			ButtonType.YES,
+    			ButtonType.NO
+    	);
+    	
+    	confirmationSupprimerPersonne.setTitle("Confirmation de suppression d'une personne");
+    	Optional<ButtonType> res = confirmationSupprimerPersonne.showAndWait();
+    	if (res.get() == ButtonType.YES) {
+    		Personne personneAsupprimer = new Personne(lblNom.getText(), lblPrenom.getText());
+        	Donnees.supprimerPersonneGala(personneAsupprimer);
+        	Main.fermerInfoPersonne();
+    	}
+    }
 }
