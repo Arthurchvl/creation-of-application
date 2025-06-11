@@ -93,6 +93,7 @@ public class Main extends Application{
 	}
 	
 	static public void rechargerInfoTable(Integer noTable) {
+		fInfoTable.chargerDonnees(noTable);
 		fInfoTable.chargerListePersonnes(noTable);
 	}
 	

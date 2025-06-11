@@ -13,7 +13,7 @@ public class FenPlanDeTable extends Stage {
 	private CtrlPlanTable ctrl;
 	
 	public FenPlanDeTable() throws IOException{
-		this.setTitle("ACCUEIL");
+		this.setTitle("PLAN DE TABLE");
 		this.setResizable(false);
 		
 		Scene laScene = new Scene(creerSceneGraph());

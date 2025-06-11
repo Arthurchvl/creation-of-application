@@ -46,15 +46,17 @@ public class FenInfoTable extends Stage{
     	ArrayList<Personne> personnesDeLaTable = Donnees.getlistePersonnesDansUneTable(noTable);
     	if (personnesDeLaTable.isEmpty()) {
     		items.add("Il n'y a personne dans la table.");
+    		ctrl.bnVider.setDisable(true);
+    		ctrl.bnDeplacer.setDisable(true);
+    	}
+    	else {
+    		ctrl.bnVider.setDisable(false);
+    		ctrl.bnDeplacer.setDisable(false);
     	}
     	ctrl.listePersonnes.setItems(items);
     	for (Personne p : personnesDeLaTable) {
     		items.add(p.toString());
     	}
     	ctrl.items = items;
-    	if (items.contains("Il n'y a personne dans la table.")) {
-    		ctrl.bnVider.setDisable(true);
-    		ctrl.bnDeplacer.setDisable(true);
-    	}
 	}
 }
