@@ -13,7 +13,7 @@ public class FenAccueil extends Stage {
 	private CtrlAccueil ctrl; 
 	
 	public FenAccueil() throws IOException{
-		this.setTitle("ACCUEIL");
+		this.setTitle("HARMONIA - ACCUEIL");
 		this.setResizable(false);
 		
 		Scene laScene = new Scene(creerSceneGraph());
