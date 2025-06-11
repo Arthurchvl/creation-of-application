@@ -155,4 +155,22 @@
     -webkit-text-fill-color: white;
 }
 
+.bnPlanTable {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: linear-gradient(to right, #9C27B0, #E91E63);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: linear-gradient(to right, #9C27B0, #E91E63);
+}
 
+.bnPlanTable:hover {
+    -fx-background-color: #ffffffb0;
+    -fx-border-color: linear-gradient(to right, #9b27b0b6, #e91e62b6);;
+}
+
+.bnPlanTable:pressed {
+    -fx-background-color: #FFFFFFb0;
+    -fx-border-color: linear-gradient(to right, #9b27b0b6, #e91e62b6);;
+}

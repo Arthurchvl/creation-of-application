@@ -58,19 +58,37 @@
                </padding>
             </Label>
             <ComboBox fx:id="listeTable" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="175.0" styleClass="combo-box" stylesheets="@style.css" />
-            <Button fx:id="bnPlanDeTable" mnemonicParsing="false" onAction="#ouvrirPlanTable" prefWidth="175.0" styleClass="grosTitre" stylesheets="@style.css" text="PLAN DE TABLE" textFill="WHITE">
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT">
+         <children>
+            <Button fx:id="bnValider" alignment="CENTER" mnemonicParsing="false" onAction="#ouvrirFenetre" prefWidth="110.0" styleClass="bnValider" stylesheets="@style.css" text="RECHERCHER">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Button>
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" spacing="20.0">
+         <children>
+            <Label alignment="CENTER" prefWidth="272.0" styleClass="grosTitre" stylesheets="@style.css" text="Afficher plan de table" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Button fx:id="bnPlanDeTable" mnemonicParsing="false" onAction="#ouvrirPlanTable" prefWidth="175.0" styleClass="bnPlanTable" stylesheets="@style.css" text="PLAN DE TABLE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
       <HBox alignment="CENTER_RIGHT" spacing="20.0">
          <children>
-            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#fermerProgramme" prefWidth="110.0" styleClass="bnAnnuler" stylesheets="@style.css" text="ANNULER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Button>
-            <Button fx:id="bnValider" mnemonicParsing="false" onAction="#ouvrirFenetre" prefWidth="110.0" styleClass="bnValider" stylesheets="@style.css" text="RECHERCHER">
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#fermerProgramme" prefWidth="110.0" styleClass="bnAnnuler" stylesheets="@style.css" text="FERMER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
