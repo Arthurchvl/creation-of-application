@@ -86,8 +86,8 @@ public class CtrlAccueil {
 		);
 		bnValider.disableProperty().bind(bnValiderDisableCondition);
 		
-		txtPrenom.setPromptText("Xavier");
-		txtNom.setPromptText("Dupont de Ligonnès");
+		txtPrenom.setPromptText("Clément");
+		txtNom.setPromptText("Porhiel");
 		
 		txtPrenom.requestFocus();
     }

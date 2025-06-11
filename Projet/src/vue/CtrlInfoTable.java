@@ -4,10 +4,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Alert.AlertType;
 import modele.*;
+
+import java.util.Optional;
+
 import controleur.*;
 
 public class CtrlInfoTable {
@@ -41,7 +47,18 @@ public class CtrlInfoTable {
     @FXML 
     void viderTable(ActionEvent event) {
     	Integer noTable = Integer.parseInt(lblTable.getText());
-    	Donnees.viderTable(noTable);
-    	Main.rechargerInfoTable(noTable);
+    	Alert confirmationEnleverTable = new Alert(
+    			AlertType.CONFIRMATION,
+    			"Confirmez de vider la table",
+    			ButtonType.YES,
+    			ButtonType.NO
+    	);
+    	
+    	confirmationEnleverTable.setTitle("Confirmation vider la table");
+    	Optional<ButtonType> res = confirmationEnleverTable.showAndWait();
+    	if (res.get() == ButtonType.YES) {
+    		Donnees.viderTable(noTable);
+        	Main.rechargerInfoTable(noTable);
+    	}
     }
 }
